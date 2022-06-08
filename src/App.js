@@ -14,13 +14,16 @@ import UserRoleUpdate from "./components/Forms/UserRoleUpdate";
 import LegalCaseTypeTable from "./components/Forms/LegalCaseTypeTable";
 import LegalStepsTable from "./components/Forms/LegalStepsTable";
 import UserRoleForm from "./components/Forms/UserRoleForm";
+import LitigationDash from "./components/Litigation/LitigationDash";
+import CaseDocumnet from "./components/Litigation/CaseDocumnet";
 
 
 
 
 function App() {
   return (
-    <React.Fragment>
+    <div>
+      <React.Fragment>
       
       <header>            
        <NavBar/>
@@ -49,6 +52,13 @@ function App() {
           <Route path="UpdateLegalStep/:_id" element={<AddLegalSteps/>} exact/>
           <Route path="/LegalStepsTable" element={<LegalStepsTable/>} exact/>
           <Route path="/login" element={<Login/>} exact/>
+
+
+          {/* litigation routes */}
+          <Route exact path="/LitigationDash" element={<LitigationDash/>} />
+          <Route exact path="/LitigationDash/CaseDocument" element={<CaseDocumnet/>} />
+
+
           
         </Routes>
       </main>
@@ -57,6 +67,8 @@ function App() {
       
 
     </React.Fragment>
+    </div>
+    
     
   );
 }
